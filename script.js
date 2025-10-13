@@ -12,7 +12,7 @@ function syncFromExternalSheet() {
     SpreadsheetApp.openById(mySheetId).getSheetByName(mySheetName);
 
   const lastRow = externalSource.getLastRow();
-  const numRows = lastRow - 8;
+  const numRows = lastRow - 8; // тук не знам, дали няма да стане бъг, ако във външната таблица има повече редове
   const data = externalSource.getRange(9, 2, numRows, 2).getValues();
 
   for (let i = 0; i < data.length; i++) {
@@ -22,8 +22,10 @@ function syncFromExternalSheet() {
   mySheet.getRange(1, 1, data.length, data[0].length).setValues(data);
 
   function replaceStockStatus(value) {
-    if (value === 'IN STOCK') {
+    if (value === 'IN STOCK - This means that you may sell this item') {
       return 9999;
+    } else if (value === 'Inventory Status') {
+      return value;
     } else {
       return 0;
     }
