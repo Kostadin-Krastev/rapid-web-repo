@@ -1,0 +1,66 @@
+/* ------------------------VERSION 1--------------------- */
+/*product slider*/
+%root% {
+  padding: 20px;
+}
+
+/*products card*/
+.bricks-layout-wrapper li {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 14px;
+  padding-bottom: 32px;
+}
+
+.bricks-layout-wrapper li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*style only to the product image*/
+.image-wrapper {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  background-color: #edf6f7;
+}
+
+/*centaring the product title price and add to cart button*/
+.content-wrapper {
+  align-items: center;
+}
+
+/*space between prices */
+.dynamic del .woocommerce-Price-amount.amount {
+  margin-right: 45px;
+}
+
+/*styling the price on the right side*/
+.dynamic ins .woocommerce-Price-amount.amount {
+  padding: 6px 14px;
+  font-size: 18px;
+  border: 1px solid rgba(77, 184, 196, 0.2);
+  border-radius: 12px;
+  background-color: #edf6f7;
+  color: #4db8c4;
+}
+
+.dynamic ins {
+  text-decoration: none;
+}
+
+/*styling the add to cart button*/
+.add_to_cart_button {
+  padding: 14px 118px 14px 24px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  background-color: #4db8c4;
+  color: #fff;
+  font-weight: 500;
+}
+
+.add_to_cart_button:hover {
+  border: 1px solid #4db8c4;
+  background-color: #ffffff;
+  color: #4db8c4;
+}
