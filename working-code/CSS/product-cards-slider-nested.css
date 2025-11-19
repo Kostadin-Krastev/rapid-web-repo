@@ -139,3 +139,93 @@
   background-color: #ffffff;
   color: #4db8c4;
 }
+
+/* ------------------------VERSION 2-ZLATKO--------------------- */
+/*product slider*/
+%root% {
+  padding: 20px;
+}
+
+/*products card*/
+.bricks-layout-wrapper li {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 14px;
+}
+
+.bricks-layout-wrapper li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*style only to the product image background*/
+.image-wrapper {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  background-color: #edf6f7;
+}
+
+/*padding to the field with product title price and add to cart button*/
+%root% .content-wrapper {
+  padding: 20px;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+%root% .content-wrapper .dynamic[data-field-id='e51f47'] {
+  width: 100%;
+}
+
+%root% .content-wrapper .dynamic[data-field-id='cd39c6'] {
+  width: 100%;
+}
+
+/*styling container with price and add to car */
+.dynamic[data-field-id='qkxzmd'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: space-between;*/
+  max-width: max-content;
+}
+
+/*style the regular price that is on the left side*/
+.dynamic del .woocommerce-Price-amount.amount {
+  /*margin-right: -40px;*/
+  /*font-family: "Playfair Display";*/
+  font-size: 20px;
+  line-height: 32px;
+  color: #1a1a1a;
+}
+
+/*styling the price on the right side*/
+.dynamic ins .woocommerce-Price-amount.amount {
+  /*margin-right: 30px;*/
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1a1a1a;
+}
+
+.dynamic ins {
+  text-decoration: none;
+}
+
+/*styling the add to cart button*/
+.add_to_cart_button {
+  padding: 8px 20px 8px 20px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  background-color: #4db8c4;
+  color: #fff;
+  font-weight: 500;
+}
+
+.add_to_cart_button:hover {
+  border: 1px solid #4db8c4;
+  background-color: #ffffff;
+  color: #4db8c4;
+}
