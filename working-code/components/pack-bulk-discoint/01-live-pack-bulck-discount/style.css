@@ -1,0 +1,95 @@
+/*styling discount pack table*/
+.rw-qty-tiers {
+  max-width: 650px;
+  padding: 20px;
+  border: 2px solid #e7e7e7;
+  border-radius: 20px;
+  background-color: #e9e6ed;
+  /* 	background-color: #fafafa; */
+}
+
+/* title discount pack table */
+.rw-qty-tiers p {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* discount options in discount pack table */
+.rw-qty-tier-option {
+  padding: 18px 20px;
+  border: 2px solid #d8d8d8;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+.rw-qty-tier-option label {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+}
+
+/* Price in discount pack table */
+.rw-qty-tiers .woocommerce-Price-amount {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.rw-qty-tier-option .woocommerce-Price-amount:first-of-type {
+  margin: 0 5px 0 5px;
+}
+
+.rw-qty-tier-option .woocommerce-Price-amount:last-of-type {
+  margin: 0 5px 0 0;
+}
+
+/* radio buttons in discount pack table*/
+.rw-qty-tier-option input[type='radio'] {
+  appearance: none; /*hide the default radio buttons*/
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  border: 2px solid #444;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.rw-qty-tier-option input[type='radio']:checked {
+  border-color: black;
+}
+
+.rw-qty-tier-option input[type='radio']:checked::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+/* Card border turns black when selected */
+.rw-qty-tier-option input[type='radio']:checked {
+  outline: none;
+}
+.rw-qty-tier-option input[type='radio']:checked:focus {
+  outline: none;
+}
+.rw-qty-tier-option:has(input[type='radio']:checked) {
+  border-color: #000;
+}
+
+/* styling add to cart button */
+.commercekit-sticky-atc-intersector .e-atc-qty-button-holder {
+  max-width: 650px;
+}
+
+.commercekit-sticky-atc-intersector
+  .e-atc-qty-button-holder
+  .single_add_to_cart_button {
+  width: 100%;
+}
