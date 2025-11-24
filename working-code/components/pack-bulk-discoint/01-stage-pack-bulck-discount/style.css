@@ -1,0 +1,78 @@
+.purchase-box {
+  border: 2px solid #e7e7e7;
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 650px;
+  background: #fafafa;
+  font-family: Arial, sans-serif;
+}
+
+.purchase-box h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #d8d8d8;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.option input {
+  margin-right: 15px;
+}
+
+.option .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sub {
+  font-size: 16px;
+  color: #8a8a8a;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #8a8a8a;
+  font-size: 18px;
+}
+
+.new-price {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.badge {
+  background: #d9ad43;
+  color: white;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.option.selected {
+  border-color: black;
+}
+
+.option.selected input {
+  accent-color: black;
+}
