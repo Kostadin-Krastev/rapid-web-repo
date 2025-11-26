@@ -1,17 +1,5 @@
-// calculates the speed in meters per second
-/*The input data are integers as follows:
- Distance in meters
- Hours
- Minutes
- Seconds
+/*Write a function to convert euro (EUR) to Bulgarian leva (BGN).
+Format the result to 2 decimal places. toFixed(2)
+Use a fixed rate between the euro and lev: 1 EUR = 1.95583 BGN. Sample input: */
 
-Use the formult V = S/T where V - speed, S - distance, T - time */
-
-const calculateSpeed = function (distanceMeters, hours, minutes, seconds) {
-  const time = hours * 3600 + minutes * 60 + seconds;
-  const speed = distanceMeters / time;
-
-  console.log(`The speed in meters per seconds is: ${speed.toFixed(6)}`);
-};
-
-calculateSpeed(2500, 5, 56, 23);
+const convertEuroToLev = function () {};
