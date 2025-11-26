@@ -1,17 +1,17 @@
-let yellowPaintLiters = 10;
-yellowPaintLiters = 17;
-yellowPaintLiters = 42;
+// calculates the speed in meters per second
+/*The input data are integers as follows:
+ Distance in meters
+ Hours
+ Minutes
+ Seconds
 
-const paintCalculater = function (yellowPaintLiters) {
-  const redPaintLiters = yellowPaintLiters / 4;
-  const whitePaintLiters = yellowPaintLiters * 2;
+Use the formult V = S/T where V - speed, S - distance, T - time */
 
-  const sumTotalPaintLiters =
-    redPaintLiters + whitePaintLiters + yellowPaintLiters;
+const calculateSpeed = function (distanceMeters, hours, minutes, seconds) {
+  const time = hours * 3600 + minutes * 60 + seconds;
+  const speed = distanceMeters / time;
 
-  console.log(
-    `Red: ${redPaintLiters}, Yellow: ${yellowPaintLiters}, White: ${whitePaintLiters} Total: ${sumTotalPaintLiters}`
-  );
+  console.log(`The speed in meters per seconds is: ${speed.toFixed(6)}`);
 };
 
-paintCalculater(yellowPaintLiters);
+calculateSpeed(2500, 5, 56, 23);
