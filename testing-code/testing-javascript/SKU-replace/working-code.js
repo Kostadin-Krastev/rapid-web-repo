@@ -42,13 +42,55 @@ function syncFromExternalSheet() {
     return rocA.localeCompare(rocB);
   });
 
-  // Записва заглавията в моята таблица. Поставя ги на ред 1, колона 1.
-  mySheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  // 🔍 Вземаме текущите SKU от моята таблица---------нов код добавя и маха старите SKU, които ги няма-----------------
+  const myLastRow = mySheet.getLastRow();
+  let myTableData = [];
 
-  // Записва всички данни под тях
-  if (rows.length > 0) {
-    mySheet.getRange(2, 1, rows.length, rows[0].length).setValues(rows);
+  if (myLastRow > 1) {
+    myTableData = mySheet
+      .getRange(2, 1, myLastRow - 1, rows[0].length)
+      .getValues();
   }
+
+  const mySKUs = myTableData.map((row) => row[0].toString().trim());
+
+  // Външният SKU списък
+  const externalSKUList = rows.map((row) => row[0].toString().trim());
+
+  // Добавяме новите SKU, които ги няма в mySheet
+  rows.forEach((row) => {
+    const sku = row[0].toString().trim();
+
+    if (!mySKUs.includes(sku)) {
+      // ако SKU го няма → добавяме реда към нашите данни
+      myTableData.push(row);
+    }
+  });
+
+  // Премахваме SKU, които вече ги няма в external sheet
+  myTableData = myTableData.filter((row) => {
+    const sku = row[0].toString().trim();
+    return externalSKUList.includes(sku);
+  });
+
+  // Сортираме myTableData отново по азбучен ред
+  myTableData.sort((a, b) => a[0].toString().localeCompare(b[0].toString()));
+
+  //   // Записва заглавията в моята таблица. Поставя ги на ред 1, колона 1.
+  //   mySheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+
+  //   // Записва всички данни под тях
+  //   if (rows.length > 0) {
+  //     mySheet.getRange(2, 1, rows.length, rows[0].length).setValues(rows);
+  //   }
+
+  // Записваме обратно в листа
+  mySheet.getRange(2, 1, mySheet.getMaxRows(), columnCount).clearContent();
+  const columnCount = rows[0].length;
+  mySheet.getRange(1, 1, 1, columnCount).setValues([headers]);
+  mySheet
+    .getRange(2, 1, myTableData.length, myTableData[0].length)
+    .setValues(myTableData);
 
   // Втората колона (колона B) се променя с помощта на тази функция. празни → null „Inventory Status“ → остава същото. Съдържа „in stock“ → става 9999. Всичко друго → става 0
   function replaceStockStatus(value) {
