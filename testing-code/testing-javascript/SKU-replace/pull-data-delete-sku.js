@@ -75,8 +75,8 @@ function syncFromExternalSheet() {
   myTableData.sort((a, b) => a[0].toString().localeCompare(b[0].toString()));
 
   // Add data into my sheet
-  mySheet.getRange(2, 1, mySheet.getMaxRows(), columnCount).clearContent();
   const columnCount = rows[0].length;
+  mySheet.getRange(2, 1, mySheet.getMaxRows(), columnCount).clearContent();
   mySheet.getRange(1, 1, 1, columnCount).setValues([headers]);
   mySheet
     .getRange(2, 1, myTableData.length, myTableData[0].length)
