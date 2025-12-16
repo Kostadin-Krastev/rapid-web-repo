@@ -1,0 +1,77 @@
+/* product card container */
+%root% ul.bricks-layout-wrapper li.bricks-layout-item {
+  position: relative;
+}
+
+/*product image gap between product title*/
+%root% ul.bricks-layout-wrapper li.bricks-layout-item div.bricks-layout-inner {
+  gap: 1rem; /*because the container is flex. The container is not here in this code*/
+}
+
+/*product image style*/
+%root% ul.bricks-layout-wrapper li.bricks-layout-item figure.image-wrapper a {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+%root% ul.bricks-layout-wrapper li.bricks-layout-item figure.image-wrapper img {
+  border-radius: 10px;
+  transition: transform 0.35s ease;
+}
+
+/* zoom on hover - product image */
+.bricks-layout-item:hover figure.image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* add to cart hidden */
+.bricks-layout-item .content-wrapper div[data-field-id='tgrusz'] {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* add to cart show on hover */
+.bricks-layout-item:hover .content-wrapper div[data-field-id='tgrusz'] {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/*style add to cart*/
+.bricks-layout-item .content-wrapper div[data-field-id='tgrusz'] a {
+  display: block;
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+}
+
+.bricks-layout-item .content-wrapper div[data-field-id='tgrusz'] a:hover {
+  background-color: #fafafa;
+}
+
+.content-wrapper .dynamic[data-field-id='mlxgss'] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/*sale badge container*/
+%root% .content-wrapper {
+  position: static;
+}
+
+/*style sale badge*/
+%root% .content-wrapper .onsale {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #fff;
+  background-color: #000;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
