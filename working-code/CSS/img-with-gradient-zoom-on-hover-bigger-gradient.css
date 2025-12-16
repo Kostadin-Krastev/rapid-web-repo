@@ -1,0 +1,41 @@
+#brxe-csadjw a.brxe-block {
+  position: relative;
+  overflow: hidden;
+}
+
+/* IMAGE layer (zoom-ва се) */
+#brxe-csadjw a.brxe-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+/* GRADIENT overlay (30%) */
+#brxe-csadjw a.brxe-block::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+/* Hover effects */
+#brxe-csadjw a.brxe-block:hover::before {
+  transform: scale(1.06);
+}
+
+#brxe-csadjw a.brxe-block:hover::after {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Content above image + gradient */
+#brxe-csadjw a.brxe-block > * {
+  position: relative;
+  z-index: 2;
+}
