@@ -75,3 +75,34 @@
   border-radius: 4px;
   text-transform: uppercase;
 }
+
+/* add to cart button is visible over the product image */
+@media (max-width: 1024px) {
+  ul.bricks-layout-wrapper
+    li.bricks-layout-item
+    .content-wrapper
+    div[data-field-id='tgrusz'] {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  ul.bricks-layout-wrapper
+    li.bricks-layout-item:hover
+    .content-wrapper
+    div[data-field-id='tgrusz'] {
+    transform: translateX(-50%);
+  }
+}
+
+/* to added in to Brick builder - select the breakpoint and paste without @media*/
+#brxe-gavtxu .bricks-layout-item .content-wrapper div[data-field-id='tgrusz'] {
+  opacity: 1 !important;
+  transform: translateX(-50%) !important;
+}
+
+#brxe-gavtxu
+  .bricks-layout-item:hover
+  .content-wrapper
+  div[data-field-id='tgrusz'] {
+  transform: translateX(-50%) !important;
+}
