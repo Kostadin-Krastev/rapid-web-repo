@@ -1,0 +1,44 @@
+/* ADD ON PRODUCT CARD ELEMENT */
+/* product image */
+%root% div.product-img-container figure a {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+%root% div.product-img-container figure a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+/* zoom on hover */
+%root%:hover figure img {
+  transform: scale(1.05);
+}
+
+/*add to cart button*/
+/* add to cart hidden */
+%root% div.add-cart-button-wrapper {
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* add to cart show on hover */
+%root%:hover div.add-cart-button-wrapper {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* ADD ON MEDIA WRAPPER ELEMENT */
+/*show second image*/
+%root% .second {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+/*Show Content on Hover*/
+%root%:hover .second {
+  opacity: 1;
+}
