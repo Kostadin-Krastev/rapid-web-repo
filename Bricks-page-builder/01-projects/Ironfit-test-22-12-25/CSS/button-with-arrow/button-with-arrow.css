@@ -1,7 +1,24 @@
-%root%:hover .fa-arrow-right {
-  transform: translateX(5px);
+/* style the button */
+button {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 18px;
+  max-width: 100%;
+  padding: 10px 18px;
+  background-color: #fff;
+  cursor: pointer;
 }
 
-%root% .fa-arrow-right {
+/* style the icon */
+svg {
+  width: 16px;
+}
+
+/* hover effect */
+svg {
   transition: transform 0.3s ease;
+}
+
+button:hover svg {
+  transform: translateX(5px);
 }
