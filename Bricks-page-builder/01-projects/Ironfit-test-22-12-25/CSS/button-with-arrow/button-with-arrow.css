@@ -1,0 +1,7 @@
+%root%:hover .fa-arrow-right {
+  transform: translateX(5px);
+}
+
+%root% .fa-arrow-right {
+  transition: transform 0.3s ease;
+}
